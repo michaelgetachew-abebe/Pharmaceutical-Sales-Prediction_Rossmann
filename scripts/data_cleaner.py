@@ -13,4 +13,8 @@ class data_cleaner:
         else:
             self.df = df
 
+    def remove_unwanted_columns(self, columns: list) -> pd.DataFrame:
+        self.df.drop(columns, axis=1, inplace=True)
+        return self.df
+
     
