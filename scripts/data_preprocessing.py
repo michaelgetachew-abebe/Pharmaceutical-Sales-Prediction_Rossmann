@@ -24,4 +24,6 @@ class data_preprocessor:
         return self.df.drop(index=dropped, inplace=True)
 
     def see_datatypes(self) -> pd.DataFrame:
-        self.logger.info("S")
+        data_types = self.df.dtypes
+        self.logger.info(f"Data Types: {data_types}")
+        return self.df.dtypes
