@@ -2,3 +2,4 @@ __py*
 mlruns
 uploads
 output
+data/
