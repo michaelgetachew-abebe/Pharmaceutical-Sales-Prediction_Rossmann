@@ -1,22 +1,33 @@
-from asyncio.log import logger
+import os
 import logging
+# a function  to create and save logs in the log files
 
-class logwritter:
-    
-    def __init__(self, file_name: str, basic_level = logging.INFO):
 
-        logger = logging.getLogger(__name__)
+def log(path, file):
+    # check if the file exist
+    log_file = os.path.join(path, file)
 
-        logger.setLevel(basic_level)
+    if not os.path.isfile(log_file):
+        open(log_file, "w+").close()
 
-        file_handler = logging.FileHandler(file_name)
+    console_logging_format = "%(levelname)s %(message)s"
+    file_logging_format = "%(asctime)s : %(levelname)s: %(name)s: %(module)s: %(funcName)s: %(message)s"
 
-        formatter = logging.Formatter('%(asctime)s : %(levelname)s: %(name)s: %(module)s: %(funcName)s: %(message)s')
+    # configure logger
+    logging.basicConfig(level=logging.INFO, format=console_logging_format)
+    logger = logging.getLogger()
 
-        file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
+    # create a file handler for output file
+    handler = logging.FileHandler(log_file)
 
-        self.logger = logger
+    # set the logging level for log file
+    handler.setLevel(logging.INFO)
 
-    def get_logwritter(self) -> logging.Logger:
-        return self.logger
+    # create a logging format
+    formatter = logging.Formatter(file_logging_format)
+    handler.setFormatter(formatter)
+
+    # add the handlers to the logger
+    logger.addHandler(handler)
+
+    return logger
