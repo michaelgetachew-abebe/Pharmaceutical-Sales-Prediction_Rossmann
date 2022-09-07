@@ -7,7 +7,7 @@ import numpy as np
 from logger_creator import logwritter
 # Create an instance of the logwriter class
 
-#log_writter = logwritter("logs/data_preprocessing_logs.log").get_logwritter()
+#log_writter = logwritter("../logs/data_preprocessing_logs.log").get_logwritter()
 
 sys.path.append(os.path.abspath(os.path.join('../logs')))
 
@@ -34,7 +34,7 @@ class data_preprocessor:
         return self.df.describe()
 
     def show_data_info(self) -> pd.DataFrame:
-        self.logger(f"Info: {self.df.info()}")
+        self.logger.info(f"Displaying data Information")
         return self.df.info()
 
     def show_statistical_info(self) -> pd.DataFrame:

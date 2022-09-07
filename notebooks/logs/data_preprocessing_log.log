@@ -1,0 +1,17 @@
+2022-09-07 10:31:26,928 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:33:45,399 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:33:45,399 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:33:45,399 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:33:45,399 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:34:49,318 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:34:49,318 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:34:49,318 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:34:49,318 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:34:49,318 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:34:49,318 : INFO: logger_creator: data_preprocess: show_data_info: Displaying data Information
+2022-09-07 10:36:36,430 : INFO: logger_creator: data_preprocess: colums_WithMissingValue: Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 10:36:36,430 : INFO: logger_creator: data_preprocess: colums_WithMissingValue: Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 10:36:36,430 : INFO: logger_creator: data_preprocess: colums_WithMissingValue: Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 10:36:36,430 : INFO: logger_creator: data_preprocess: colums_WithMissingValue: Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 10:36:36,430 : INFO: logger_creator: data_preprocess: colums_WithMissingValue: Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']
+2022-09-07 10:36:36,430 : INFO: logger_creator: data_preprocess: colums_WithMissingValue: Colums with missing values: ['CompetitionDistance', 'CompetitionOpenSinceMonth', 'CompetitionOpenSinceYear', 'Promo2SinceWeek', 'Promo2SinceYear', 'PromoInterval']

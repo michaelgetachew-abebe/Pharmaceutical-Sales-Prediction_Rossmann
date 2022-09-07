@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from logger_creator import logwritter
-from xxlimited import Str
+#from xxlimited import Str
 
 class data_cleaner:
 
@@ -267,24 +267,24 @@ class data_cleaner:
         except:
             print("Cant fix outliers for each column")
 
-    def replace_outlier_with_median(self, dataFrame: pd.DataFrame, feature: Str) -> pd.DataFrame:
+    #def replace_outlier_with_median(self, dataFrame: pd.DataFrame, feature: Str) -> pd.DataFrame:
 
-        Q1 = dataFrame[feature].quantile(0.25)
-        Q3 = dataFrame[feature].quantile(0.75)
-        median = dataFrame[feature].quantile(0.50)
+    #    Q1 = dataFrame[feature].quantile(0.25)
+    #    Q3 = dataFrame[feature].quantile(0.75)
+    #    median = dataFrame[feature].quantile(0.50)
 
-        IQR = Q3 - Q1
+    #    IQR = Q3 - Q1
 
-        upper_whisker = Q3 + (1.5 * IQR)
-        lower_whisker = Q1 - (1.5 * IQR)
+    #    upper_whisker = Q3 + (1.5 * IQR)
+    #    lower_whisker = Q1 - (1.5 * IQR)
 
-        dataFrame[feature] = np.where(
-            dataFrame[feature] > upper_whisker, median, dataFrame[feature])
-        dataFrame[feature] = np.where(
-            dataFrame[feature] < lower_whisker, median, dataFrame[feature])
-        self.logger.info(f"Outlier for {feature} is fixed")
+    #    dataFrame[feature] = np.where(
+    #        dataFrame[feature] > upper_whisker, median, dataFrame[feature])
+    #    dataFrame[feature] = np.where(
+    #        dataFrame[feature] < lower_whisker, median, dataFrame[feature])
+    #    self.logger.info(f"Outlier for {feature} is fixed")
 
-        return dataFrame
+    #    return dataFrame
 
     def standardized_column(self, columns: list, new_name: list, func) -> pd.DataFrame:
         """
