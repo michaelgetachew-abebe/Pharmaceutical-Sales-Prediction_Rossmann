@@ -1,0 +1,25 @@
+# This workflow will install Python dependencies, run contionous machine learning integrations and provides a cml file for each push triggered event
+
+name: training_model
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        #env:
+         # REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         # GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+
+        run: |
+          pip install -r requirements.txt
+          dvc pull Rossmann_store_data/train_store.csv --run-cache
+          dvc pull Rossmann_store_data/test.cvs --run-cache
+          cd models
+          python RandonForestRegressor.py
+          echo "# RANDOM FOREST METRICS" >> report.md
+          cat random_forest_metrics.txt
+          cml-send-comment report.md
