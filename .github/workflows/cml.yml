@@ -16,8 +16,8 @@ jobs:
 
         run: |
           pip install -r requirements.txt
-          dvc pull Rossmann_store_data/train_store.csv --run-cache
-          dvc pull Rossmann_store_data/test.cvs --run-cache
+          dvc pull ../Rossmann_store_data/train_store.csv --run-cache
+          dvc pull ../Rossmann_store_data/test.cvs --run-cache
           cd models
           python RandomForestRegressor.py
           echo "# RANDOM FOREST METRICS" >> report.md
