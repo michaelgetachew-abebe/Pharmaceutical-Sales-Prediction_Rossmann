@@ -55,9 +55,23 @@ if __name__ == "main":
         max_features = 'auto',
         max_leaf_nodes = None,
         min_impurity_decrease = 0.0,
+        min_impurity_split = None,
         bootstrap = True,
         oob_score = False,
         n_jobs = 4,
         random_state = 18,
         verbose = 0,
         warm_start = False)
+    
+    randomforestregressor.fit(X_train, y_train)
+    logger.info("Model fitting completed successfully")
+    mlflow.sklearn.log_model(randomforestregressor, "Random Forest Regressor Model")
+
+    #Prediction and Evaluation of the model
+    ybar = randomforestregressor(X_test)
+    prediction_error = rmspe(y_test, ybar)
+
+    logger.info(f"Model Prediction Error{prediction_error}")
+    mlflow.log_param("Model Prediction Error", prediction_error)
+    with open("Random_forest_regressor.txt", "w") as outfile:
+        outfile.write("Model Prediction Error in:" + str(prediction_error))
