@@ -18,7 +18,7 @@ sys.path.append(f"{cwd}/scripts")
 
 from data_preprocess import preprocess
 from logger_creator import log
-
+from loss_functions import rmse
 data_version = "version1"
 data_url = dvc.api.get_url(
     path = 'data/tarin_store.csv',
@@ -69,7 +69,7 @@ if __name__ == "main":
 
     #Prediction and Evaluation of the model
     ybar = randomforestregressor(X_test)
-    prediction_error = rmspe(y_test, ybar)
+    prediction_error = rmse(y_test, ybar)
 
     logger.info(f"Model Prediction Error{prediction_error}")
     mlflow.log_param("Model Prediction Error", prediction_error)
