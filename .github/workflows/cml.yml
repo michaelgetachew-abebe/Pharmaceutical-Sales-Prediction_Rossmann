@@ -19,7 +19,7 @@ jobs:
           dvc pull Rossmann_store_data/train_store.csv --run-cache
           dvc pull Rossmann_store_data/test.cvs --run-cache
           cd models
-          python RandonForestRegressor.py
+          python RandomForestRegressor.py
           echo "# RANDOM FOREST METRICS" >> report.md
           cat random_forest_metrics.txt
           cml-send-comment report.md
