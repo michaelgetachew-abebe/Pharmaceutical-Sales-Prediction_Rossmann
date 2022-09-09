@@ -123,4 +123,9 @@ class data_preprocess:
         missing_data = pd.concat(
             [total, percent_2], axis=1, keys=['Total', '%'])
         return missing_data
+    
+    def fill_missing_with_zero(self, df, columns):
         
+        for col in columns:
+            df[col] = df[col].fillna(0)
+        return df
