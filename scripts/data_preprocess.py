@@ -80,3 +80,13 @@ class data_preprocess:
 
         return 1 if (date.weekday() > 4 or date.weekday() < 1) else 0
         
+    def extract_fields_date(self, df, date_column):
+        
+        df['Year'] = df[date_column].dt.year
+        df['Month'] = df[date_column].dt.month
+        df['Day'] = df[date_column].dt.day
+        df['DayOfWeek'] = df[date_column].dt.dayofweek
+        df['weekday'] = df[date_column].dt.weekday
+        df['weekofyear'] = df[date_column].dt.weekofyear
+        df['weekend'] = df[date_column].apply(self.is_weekend)
+        return df
