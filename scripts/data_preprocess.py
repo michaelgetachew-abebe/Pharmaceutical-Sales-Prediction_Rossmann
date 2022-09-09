@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import sys
+
 from sklearn.model_selection import cross_validate
 from sklearn.preprocessing import LabelEncoder
 
@@ -35,3 +37,20 @@ def preprocess(train_store, test):
     return features_df, targets
 
 class data_preprocess:
+    def __init__(self) -> None:
+        """Initilize class."""
+        try:
+            pass
+            #section left for logging information if class is initialized successfully
+        except Exception:
+            #section for logging class information in exception
+            sys.exit(1)
+
+    def get_numerical_columns(self, df):
+        """Get numerical columns from dataframe."""
+        
+        num_col = df.select_dtypes(
+            exclude="object").columns.tolist()
+        return num_col
+    
+    
