@@ -58,3 +58,8 @@ class data_preprocess:
         return df.select_dtypes(
                 include="object").columns.tolist()
     
+    def drop_duplicate(self, df: pd.DataFrame) -> pd.DataFrame:
+        
+        df = df.drop_duplicates(subset='Date')
+
+        return df
