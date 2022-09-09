@@ -145,3 +145,7 @@ class data_preprocess:
                 df[col] < lower, lower, df[col])
         return df
     
+    def fill_missing_mode(self, df, columns):
+        for col in columns:
+            df[col] = df[col].fillna(df[col].mode()[0])
+        return df
