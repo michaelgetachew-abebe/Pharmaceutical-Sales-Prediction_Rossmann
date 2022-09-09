@@ -114,3 +114,13 @@ class data_preprocess:
         for col in columns:
             df[col] = df[col].fillna(df[col].median())
         return df
+
+    def get_missing_data_percentage(self, df):
+        
+        total = df.isnull().sum().sort_values(ascending=False)
+        percent_1 = total/df.isnull().count()*100
+        percent_2 = (round(percent_1, 1)).sort_values(ascending=False)
+        missing_data = pd.concat(
+            [total, percent_2], axis=1, keys=['Total', '%'])
+        return missing_data
+        
