@@ -76,3 +76,7 @@ class data_preprocess:
     
         return pd.merge(df1, df2, on=on)
         
+    def is_weekend(self, date):
+
+        return 1 if (date.weekday() > 4 or date.weekday() < 1) else 0
+        
