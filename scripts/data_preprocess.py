@@ -63,3 +63,7 @@ class data_preprocess:
         df = df.drop_duplicates(subset='Date')
 
         return df
+    
+    def get_missing_values(self, df):
+        
+        return df.isnull().sum()
