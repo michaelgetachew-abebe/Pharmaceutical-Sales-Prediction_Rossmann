@@ -53,4 +53,8 @@ class data_preprocess:
             exclude="object").columns.tolist()
         return num_col
     
+    def get_categorical_columns(self, df):
+        """Get categorical columns from dataframe."""
+        return df.select_dtypes(
+                include="object").columns.tolist()
     
