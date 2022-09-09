@@ -92,7 +92,7 @@ class data_preprocess:
         return df
 
     def label_encode(self, df, columns):
-        
+
         label_encoded_columns = []
         # For loop for each columns
         for col in columns:
@@ -108,3 +108,9 @@ class data_preprocess:
         # Merge all data frames
         label_encoded_columns = pd.concat(label_encoded_columns, axis=1)
         return label_encoded_columns
+
+    def fill_missing_median(self, df, columns):
+        
+        for col in columns:
+            df[col] = df[col].fillna(df[col].median())
+        return df
