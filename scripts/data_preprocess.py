@@ -37,14 +37,8 @@ def preprocess(train_store, test):
     return features_df, targets
 
 class data_preprocess:
-    def __init__(self) -> None:
-        """Initilize class."""
-        try:
-            pass
-            #section left for logging information if class is initialized successfully
-        except Exception:
-            #section for logging class information in exception
-            sys.exit(1)
+    def __init__(self, df = pd.DataFrame):
+        self.df = df
 
     def get_numerical_columns(self, df):
         """Get numerical columns from dataframe."""
@@ -69,8 +63,8 @@ class data_preprocess:
         return df.isnull().sum()
 
     def convert_to_datetime(self, df, column):
-        df[column] = pd.to_datetime(df[column])
-        return df
+        self.df[column] = self.pd.to_datetime(df[column])
+        return self.df
         
     def is_weekend(self, date):
 

@@ -10,7 +10,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import LSTM
 
-time_series_data = pd.read_csv('../data/train_store.csv',
+time_series_data = pd.read_csv('../data/train_store .csv',
                                index_col="Date", parse_dates=True)
 time_series_data = time_series_data['Sales']
 time_series_data = pd.DataFrame({
