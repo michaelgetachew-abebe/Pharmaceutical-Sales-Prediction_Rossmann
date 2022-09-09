@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
-
+import seaborn as sns
+from sklearn.model_selection import cross_validate
+from sklearn.preprocessing import LabelEncoder
 
 def preprocess(train_store, test):
     # since competition open since have similar meanings we can merge into once
@@ -31,3 +33,5 @@ def preprocess(train_store, test):
     print(targets)
     # targets = float(targets)
     return features_df, targets
+
+class data_preprocess:
