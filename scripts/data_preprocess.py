@@ -129,3 +129,19 @@ class data_preprocess:
         for col in columns:
             df[col] = df[col].fillna(0)
         return df
+
+    def replace_outliers_iqr(self, df, columns):
+        
+        for col in columns:
+            Q1, Q3 = df[col].quantile(
+                0.25), df[col].quantile(0.75)
+            IQR = Q3 - Q1
+            cut_off = IQR * 1.5
+            lower, upper = Q1 - cut_off, Q3 + cut_off
+
+            df[col] = np.where(
+                df[col] > upper, upper, df[col])
+            df[col] = np.where(
+                df[col] < lower, lower, df[col])
+        return df
+    
