@@ -90,3 +90,21 @@ class data_preprocess:
         df['weekofyear'] = df[date_column].dt.weekofyear
         df['weekend'] = df[date_column].apply(self.is_weekend)
         return df
+
+    def label_encode(self, df, columns):
+        
+        label_encoded_columns = []
+        # For loop for each columns
+        for col in columns:
+            # We define new label encoder to each new column
+            le = LabelEncoder()
+            # Encode our data and create new Dataframe of it,
+            # notice that we gave column name in "columns" arguments
+            column_dataframe = pd.DataFrame(
+                le.fit_transform(df[col]), columns=[col])
+            # and add new DataFrame to "label_encoded_columns" list
+            label_encoded_columns.append(column_dataframe)
+
+        # Merge all data frames
+        label_encoded_columns = pd.concat(label_encoded_columns, axis=1)
+        return label_encoded_columns
