@@ -67,3 +67,7 @@ class data_preprocess:
     def get_missing_values(self, df):
         
         return df.isnull().sum()
+
+    def convert_to_datetime(self, df, column):
+        df[column] = pd.to_datetime(df[column])
+        return df
