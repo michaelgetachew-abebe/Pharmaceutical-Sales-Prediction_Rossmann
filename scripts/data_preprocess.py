@@ -71,3 +71,8 @@ class data_preprocess:
     def convert_to_datetime(self, df, column):
         df[column] = pd.to_datetime(df[column])
         return df
+
+    def join_dataframes(self, df1, df2, on, how="inner"):
+    
+        return pd.merge(df1, df2, on=on)
+        
