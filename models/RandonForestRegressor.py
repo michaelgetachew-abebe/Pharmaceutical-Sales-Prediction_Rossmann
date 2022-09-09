@@ -21,9 +21,8 @@ from logger_creator import log
 from loss_functions import rmse
 data_version = "version1"
 data_url = dvc.api.get_url(
-    path = 'data/tarin_store.csv',
-    repo = '../',
-    rev = data_version
+    path = 'data/train_store.csv',
+    repo = 'https://github.com/michaelgetachew-abebe/Pharmaceutical-Sales-Prediction_Rossmann'
 )
 
 logger = log(path = '../logs/', file = 'randomforestregressor_log.log')
