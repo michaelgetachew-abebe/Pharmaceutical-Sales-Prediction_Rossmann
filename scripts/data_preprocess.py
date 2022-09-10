@@ -61,11 +61,10 @@ class data_preprocess:
     def get_missing_values(self, df):
         
         return df.isnull().sum()
-
     def convert_to_datetime(self, df, column):
-        df[column] = pd.to_datetime(df[column])
-        return df
-        
+            df[column] = pd.to_datetime(df[column])
+            return df
+             
     def is_weekend(self, date):
 
         return 1 if (date.weekday() > 4 or date.weekday() < 1) else 0
