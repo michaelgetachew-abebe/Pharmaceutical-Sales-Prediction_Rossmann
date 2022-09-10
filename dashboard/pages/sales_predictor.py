@@ -104,7 +104,7 @@ def load_model():
 if data_added:
 
     
-    repo="https://github.com/Nathnael12/pharmaceutical-sales-pridiction.git"
+    repo="https://github.com/michaelgetachew-abebe/Pharmaceutical-Sales-Prediction_Rossmann"
     with st.spinner("Please wait a moment"):
         # df=preprocess.prepare(data)
         df=preprocess.format_dtype(data)
